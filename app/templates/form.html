@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1 class="funny-title">😄 Enter Your Details! 🦄</h1>
+    <form action="/submit" method="POST" class="funny-form">
+        <label for="name">Your Super Cool Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="color">Your Favorite Color:</label>
+        <div class="color-picker">
+            <input type="color" id="color" name="color" value="#ff0000">
+            <span class="color-preview" id="colorPreview" style="background-color: #ff0000;"></span>
+        </div>
+
+        <label for="profession">Your Profession:</label>
+        <select id="profession" name="profession">
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Manager</option>
+            <option value="bartender">Bartender</option>
+            <option value="doctor">Doctor</option>
+            <option value="singer">Singer</option>
+        </select>
+
+        <p>Your Hobbies:</p>
+        <label class="checkbox-container">
+            <input type="checkbox" name="hobbies" value="books">Books
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" name="hobbies" value="sports">Sports
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" name="hobbies" value="games"> Games
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" name="hobbies" value="cooking">Cooking
+            <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container">
+            <input type="checkbox" name="hobbies" value="fishing">Fishing
+            <span class="checkmark"></span>
+        </label>
+
+        <p>Your Level:</p>
+        <label class="radio-container">
+            <input type="radio" name="level" value="beginner"> Beginner
+            <span class="radiomark"></span>
+        </label>
+        <label class="radio-container">
+            <input type="radio" name="level" value="advanced"> Advanced
+            <span class="radiomark"></span>
+        </label>
+        <label class="radio-container">
+            <input type="radio" name="level" value="middle"> Middle
+            <span class="radiomark"></span>
+        </label>
+
+        <label for="email">Your Awesome Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <button type="submit" class="funny-button">🚀 Let's Go!</button>
+
+        <div class="surprise-container">
+            <input type="checkbox" id="surprise-checkbox">
+            <label for="surprise-checkbox" class="surprise-button">🎁 Нажми меня!</label>
+
+            <div class="surprise-content">
+                <p style="text-align: center; font-weight: bold; margin-bottom: 15px;">
+                    Ура! Вы нашли секретное сообщение! 🎉<br>
+                    Теперь вы официально круты! 😎
+                </p>
+
+                <p>Выберите своего единорога:</p>
+                <label class="unicorn-option">
+                    <input type="radio" name="unicorn" value="rainbow" style="margin-right: 10px;">
+                    Радужный 🌈
+                </label>
+                <label class="unicorn-option">
+                    <input type="radio" name="unicorn" value="sparkle" style="margin-right: 10px;">
+                    Блёстковый ✨
+                </label>
+                <label class="unicorn-option">
+                    <input type="radio" name="unicorn" value="galaxy" style="margin-right: 10px;">
+                    Галактический 🌌
+                </label>
+                <label class="unicorn-option">
+                    <input type="radio" name="unicorn" value="ninja" style="margin-right: 10px;">
+                    Ниндзя-единорог 🥷🦄
+                </label>
+
+                <label class="magic-label">
+                    <input type="checkbox" name="magic" value="yes" style="margin-right: 10px;">
+                    Я согласен на магическое преобразование
+                </label>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

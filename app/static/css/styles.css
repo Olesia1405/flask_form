@@ -1,0 +1,277 @@
+/* Общее стилизование */
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #fffb91;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовок */
+.funny-title {
+    font-size: 3rem;
+    color: #ff69b4;
+    text-shadow: 3px 3px #ffa500;
+    margin-top: 20px;
+    animation: wobble 2s infinite;
+}
+
+/* Анимация для заголовка */
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Стили формы */
+.funny-form {
+    margin: 50px auto;
+    padding: 20px;
+    width: 400px;
+    background-color: #ffe4e1;
+    border: 5px dashed #ff4500;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transform: rotate(-2deg);
+}
+
+.color-picker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-preview {
+    background-color: rgb(255, 0, 0);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+/* Стили для кастомных чекбоксов */
+.checkbox-container, .radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container input, .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Кастомный чекбокс */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #e0f7fa;
+    border: 2px solid #4dd0e1;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.checkbox-container:hover .checkmark {
+    background-color: #b2ebf2;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #4dd0e1;
+}
+
+.checkmark:after {
+    content: "✓";
+    position: absolute;
+    display: none;
+    color: white;
+    font-weight: bold;
+    left: 7px;
+    top: 2px;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Кастомный радио-баттон */
+.radiomark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fce4ec;
+    border: 2px solid #f48fb1;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.radio-container:hover .radiomark {
+    background-color: #f8bbd0;
+}
+
+.radio-container input:checked ~ .radiomark {
+    background-color: #f48fb1;
+}
+
+.radiomark:after {
+    content: "●";
+    position: absolute;
+    display: none;
+    color: white;
+    font-size: 18px;
+    left: 4px;
+    top: 0;
+}
+
+.radio-container input:checked ~ .radiomark:after {
+display: block;
+}
+
+
+/* Поля ввода */
+.funny-form input[type="text"],
+.funny-form input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff1493;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #fffaf0;
+}
+
+/* Поля ввода: при наведении */
+.funny-form input[type="text"]:hover,
+.funny-form input[type="email"]:hover {
+    background-color: #ffd700;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+/* Кнопка */
+.funny-button {
+    background-color: #ff4500;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s infinite;
+}
+
+/* Анимация кнопки */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Кнопка: при наведении */
+.funny-button:hover {
+    background-color: #ff6347;
+    transform: scale(1.2);
+    transition: 0.3s ease;
+}
+
+.surprise-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.surprise-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #d63031;
+    width: 100%;
+}
+
+.surprise-button:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #d63031;
+}
+
+.surprise-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background-color: #ffeaa7;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#surprise-checkbox {
+    display: none;
+}
+
+#surprise-checkbox:checked ~ .surprise-content {
+    max-height: 300px;
+    padding: 15px;
+    margin: 15px 0;
+    animation: fadeIn 0.5s;
+}
+
+#surprise-checkbox:checked + .surprise-button {
+    background-color: #00b894;
+    box-shadow: 0 4px 0 #00886b;
+}
+
+#surprise-checkbox:checked + .surprise-button::after {
+    content: "🎉 Ура!";
+    margin-left: 10px;
+}
+
+.unicorn-option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.unicorn-option:hover {
+    background-color: white;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.magic-label {
+    display: block;
+    margin: 15px 0;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
